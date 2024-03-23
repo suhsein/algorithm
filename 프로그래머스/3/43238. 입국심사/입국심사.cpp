@@ -1,25 +1,24 @@
 #include <string>
 #include <vector>
-#include <iostream>
 #define ll long long
 using namespace std;
 
-
-bool chk(ll m, int& n, vector<int> &times){
+bool chk(int &n, ll &m, vector<int> &times){
     ll cnt = 0;
-    for(auto t : times){
+    for(auto t: times) {
         cnt += m / t;
-        if(cnt >= n) return 0;
+        if(cnt >= n) return 1;
     }
-    return 1;
+    return 0;
 }
 
-long long solution(int n, vector<int> times) {
-    ll l = -1, r = 1e18, m;
-    while(l + 1 < r){
-        m = (l + r) / 2;
-        if(!chk(m, n, times)) r = m;
-        else l = m;
+ll solution(int n, vector<int> times) {
+    ll l = 0, r = 1e9 * n, m;
+    while(l < r){
+        m = (l+r)/2;
+        if(chk(n,m,times)) r = m;
+        else l = m + 1;
     }
-    return l + 1;
+    
+    return r;
 }
