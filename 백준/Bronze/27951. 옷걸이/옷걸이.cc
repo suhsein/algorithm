@@ -8,29 +8,29 @@ int arr[MX];
 int main(void) {
 	ios::sync_with_stdio(0), cin.tie(0);
 	cin >> N;
-	for (int i = 0; i < N; i++) cin >> arr[i];
+	for (int i = 0; i < N; i++) {
+		cin >> arr[i];
+		ans += "U";
+	}
 	cin >> U >> D;
 
 	for (int i = 0; i < N; i++) {
 		if (arr[i] == 1) {
-			if (U) {
-				U--;
-				ans += "U";
-			}
+			if (U) U--;
 		}
 		else if (arr[i] == 2) {
 			if (D) {
 				D--;
-				ans += "D";
+				ans[i] = 'D';
 			}
 		}
-		else if (arr[i] == 3) {
-			if (U) {
-				U--;
-				ans += "U";
-			} else if (D) {
+	}
+	for (int i = 0; i < N; i++) {
+		if (arr[i] == 3) {
+			if (U) U--;
+			else if (D) {
 				D--;
-				ans += "D";
+				ans[i] = 'D';
 			}
 		}
 	}
