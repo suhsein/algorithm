@@ -8,7 +8,7 @@ int main(void) {
 	cin >> s;
 	for (auto c : s) {
 		if (c == korea[k]) k++;
-		else if (c == yonsei[y]) y++;
+		if (c == yonsei[y]) y++;
 		if (k == 5) {
 			cout << "KOREA";
 			break;
