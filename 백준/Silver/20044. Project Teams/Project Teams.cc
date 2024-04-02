@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int n, arr[1000005], ans = 200005;
+int n, arr[10005], ans = 200005;
 int main(void) {
 	ios::sync_with_stdio(0), cin.tie(0);
 	cin >> n;
