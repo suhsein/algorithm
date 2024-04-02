@@ -1,3 +1,4 @@
+// [Silver V] Title: 귀찮음, Time: 48 ms, Memory: 3872 KB, Score: 30 point
 #include <iostream>
 #include <algorithm>
 #define ll long long
