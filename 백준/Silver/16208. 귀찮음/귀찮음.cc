@@ -1,14 +1,17 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#define ll long long
 using namespace std;
-int n, ans;
+int n;
+ll ans;
 vector<int> v;
 
 void split_stick(vector<int> st) {
-	int l = 0, r = st.size() - 1, sum = 0;
+	int l = 0, r = st.size() - 1;
+    ll sum = 0, tmp = 0;
 	for (auto x : st) sum += x;
-	int target = sum / 2, tmp = 0;
+	ll target = sum / 2;
 	if (sum % 2) target++;
 
 	while (1) {
