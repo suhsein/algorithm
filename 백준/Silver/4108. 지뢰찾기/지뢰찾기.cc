@@ -1,16 +1,15 @@
 #include <iostream>
-#include <string>
 #define MX 105
 using namespace std;
 int R, C, dx[8] = { -1,-1,-1,0,0,1,1,1 }, dy[8] = { -1,0,1,-1,1,-1,0,1 }, ans[MX][MX];
-string map[MX];
+char map[MX][MX];
 int main(void) {
 	ios::sync_with_stdio(0), cin.tie(0);
 	while (1) {
 		cin >> R >> C;
 		if (!R && !C) return 0;
 		for (int i = 0; i < MX; i++) fill(ans[i], ans[i] + MX, 0);
-		for (int i = 0; i < R; i++) cin >> map[i];
+		for (int i = 0; i < R; i++) for (int j = 0; j < C; j++) cin >> map[i][j];
 		for (int i = 0; i < R; i++) {
 			for (int j = 0; j < C; j++) {
 				if (map[i][j] == '*') {
