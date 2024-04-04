@@ -1,16 +1,10 @@
 #include <iostream>
+#include <algorithm>
 #define MX 105
 using namespace std;
 int N, M, map[MX][MX], cnt, ans;
 
 void solve(int x, int y) {
-	if (x == N - 1 && y == M - 1) {
-		if (map[x][y]) {
-			map[x][y] = 0;
-			cnt--;
-		}
-		return;
-	}
 	for (int i = x; i < N; i++) {
 		for (int j = y; j < M; j++) {
 			if (map[i][j]) {
@@ -23,7 +17,6 @@ void solve(int x, int y) {
 		}
 	}
 }
-
 int main(void) {
 	ios::sync_with_stdio(0), cin.tie(0);
 	cin >> N >> M;
@@ -33,14 +26,14 @@ int main(void) {
 			if (map[i][j]) cnt++;
 		}
 	}
+
 	while (cnt) {
-		ans++;
 		if (map[0][0]) {
 			map[0][0] = 0;
 			cnt--;
-			if (!cnt) break;
 		}
 		solve(0, 0);
+		ans++;
 	}
 	cout << ans;
 }
