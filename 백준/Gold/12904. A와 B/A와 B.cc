@@ -1,19 +1,20 @@
 #include <iostream>
 #include <algorithm>
+#include <unordered_map>
 #include <string>
 using namespace std;
 string s, t;
 bool flag;
 int ss, sa, sb, ta, tb;
+unordered_map<string, bool> m;
 
 void solve(string str, int cura, int curb) {
-	if (flag) return;
-	if (str.size() == ss) {
-		if (str == s) {
-			flag = 1;
-			return;
-		}
+	if (flag || (m.find(str) != m.end())) return;
+	if (str == s) {
+		flag = 1;
+		return;
 	}
+	m[str] = 1;
 	if (cura > sa && str[str.size() - 1] == 'A') 
 		solve(str.substr(0, str.size() - 1), cura - 1, curb);
 	if (curb > sb && str[str.size() - 1] == 'B') {
