@@ -4,7 +4,7 @@
 #define X first
 #define Y second
 using namespace std;
-int N, L, a, b, ans, tmp;
+int N, L, a, b, ans, tmp, cnt;
 vector<pair<int, int>> v;
 
 int main(void) {
@@ -18,10 +18,12 @@ int main(void) {
 
 	sort(v.begin(), v.end());
 	for (int i = 0; i < N; i++) {
-		if(v[i].X > tmp) tmp = v[i].X;
-		while (tmp < v[i].Y) {
-			tmp += L;
-			ans++;
+		if (v[i].X > tmp) tmp = v[i].X;
+		if (tmp < v[i].Y) {
+			cnt = (v[i].Y - tmp) / L;
+			if ((v[i].Y - tmp) % L) cnt++;
+			ans += cnt;
+			tmp += cnt * L;
 		}
 	}
 	cout << ans;
