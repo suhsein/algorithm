@@ -5,16 +5,11 @@ class Solution {
     public String solution(String[] participant, String[] completion) {
         Map<String, Integer> m = new HashMap<>();
         
-        for(String cur : participant){
-            if(m.containsKey(cur)){
-                m.put(cur, m.get(cur) + 1);
-            } else m.put(cur, 1);
-        }
-        
+        for(String cur : participant) m.put(cur, m.getOrDefault(cur, 0) + 1);
         for(String cur : completion) m.put(cur, m.get(cur) - 1);
         
-        for(String key : m.keySet()){
-            if(m.get(key) == 1) return key;
+        for(Map.Entry<String,Integer> entry : m.entrySet()){
+            if(entry.getValue() == 1) return entry.getKey();
         }
        
         return "";
