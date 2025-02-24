@@ -1,17 +1,20 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 class Solution {
     public String solution(String[] participant, String[] completion) {
-        Map<String, Integer> m = new HashMap<>();
+        String answer = "";
         
-        for(String cur : participant) m.put(cur, m.getOrDefault(cur, 0) + 1);
-        for(String cur : completion) m.put(cur, m.get(cur) - 1);
+        Map<String, Integer> pMap = new HashMap<>();
+        for(String p : participant) pMap.put(p, pMap.getOrDefault(p, 0) + 1);
+        for(String c : completion) pMap.put(c, pMap.get(c) - 1);
         
-        for(Map.Entry<String,Integer> entry : m.entrySet()){
-            if(entry.getValue() == 1) return entry.getKey();
-        }
-       
-        return "";
+        for(Map.Entry<String, Integer> e : pMap.entrySet()) {
+            if(e.getValue() == 1) {
+                answer = e.getKey();
+                break;
+            }
+        } 
+        
+        return answer;
     }
 }
