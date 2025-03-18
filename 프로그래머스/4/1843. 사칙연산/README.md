@@ -1,10 +1,10 @@
 # [level 4] 사칙연산 - 1843 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/1843) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/1843?language=java) 
 
 ### 성능 요약
 
-메모리: 3.8 MB, 시간: 0.02 ms
+메모리: 55.1 MB, 시간: 19.47 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 03월 22일 16:12:06
+2025년 03월 18일 11:54:33
 
 ### 문제 설명
 
@@ -84,12 +84,3 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
-
-#### 풀이
-뒤 -> 앞으로 연산한다.<br>
-dp 최대, 최소 두 값을 저장해놓고, 만약 뺄셈 기호가 나오면 갱신한다.(덧셈일 경우에는 sum을 계속 더해주기만 하면 됨)<br>
-<br>
-최대갱신값 = max(-(뺄셈기호 바로 뒤에 있는 값 *  2) + sum + 최대값, -(sum + 최소값))<br>
-최소갱신값 = min(-(sum + 최대값), -sum + 최소값)<br>
-<br>
-return = 덧셈합 + 최대값
