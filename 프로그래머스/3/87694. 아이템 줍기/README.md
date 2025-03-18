@@ -1,6 +1,6 @@
 # [level 3] 아이템 줍기 - 87694 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/87694?language=java) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/87694) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 03월 18일 19:44:31
+2025년 03월 18일 19:44:52
 
 ### 문제 설명
 
