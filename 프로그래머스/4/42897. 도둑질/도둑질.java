@@ -3,24 +3,20 @@ import java.util.*;
 class Solution {
     public int solution(int[] money) {
         int n = money.length;
-        int[] first = new int[n];
-        int[] second = new int[n];
+        int[] dp1 = new int[n];
+        int[] dp2 = new int[n];
+    
+        dp1[0] = dp1[1] = money[0];
+        dp2[1] = money[1];
         
-        for(int i = 0; i < n; i++) {
-            first[i] = money[i];
-            second[i] = money[i];
+        for(int i = 2; i < n - 1; i++){
+            dp1[i] = Math.max(dp1[i - 1], dp1[i - 2] + money[i]);
+        }
+        for(int i = 2; i < n; i++){
+            dp2[i] = Math.max(dp2[i - 1], dp2[i - 2] + money[i]);   
         }
         
-        first[1] = second[0] = -1;
-        first[2] += first[0];
-        for(int i = 3; i < n; i++){
-            first[i] += Math.max(first[i - 2], first[i - 3]);
-            second[i] += Math.max(second[i - 2], second[i - 3]);
-        }
         
-        int fm = Math.max(first[n - 2], first[n - 3]);
-        int sm = Math.max(second[n - 1], second[n - 2]);
-        
-        return Math.max(fm, sm);
+        return Math.max(dp1[n - 2], dp2[n - 1]);
     }
 }
