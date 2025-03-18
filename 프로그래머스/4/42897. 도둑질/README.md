@@ -1,10 +1,10 @@
 # [level 4] 도둑질 - 42897 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42897) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42897?language=java) 
 
 ### 성능 요약
 
-메모리: 35.4 MB, 시간: 5.09 ms
+메모리: 104 MB, 시간: 33.48 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 03월 22일 17:25:41
+2025년 03월 18일 14:44:59
 
 ### 문제 설명
 
@@ -50,12 +50,3 @@
       </table>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
-
-
-#### 풀이
-비슷한 패턴의 dp를 많이 봤지만 원형 배열이라는 것이 난해했는데, 맨 앞 집과 맨 뒷 집이 연결되어 있으므로 다음과 같이 풀면 된다. <br>
-1. 맨 앞 집을 털지 않는 경우
-1. 맨 뒷 집을 털지 않는 경우
-
-두 가지 경우로 나누어 따로 dp를 구하고 그 중 최대값을 리턴하면 된다.<br>
-dp 기본 로직은 dp[i] = max(dp[i-1], dp[i-2] + money[i]) -> 현재 집을 털지 않는 경우, 현재 집을 터는 경우 
