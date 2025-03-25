@@ -9,25 +9,30 @@ public class Main {
         String str;
         int idx = 0;
         List<Character> list;
+        ListIterator<Character> iter;
         
         while(T-- > 0){
             str = br.readLine();
             list = new LinkedList<>();
-            idx = 0;
+            iter = list.listIterator();
+            
             for(char c : str.toCharArray()){
                 if(c == '<') {
-                    if(idx > 0) idx--;
+                    if(iter.hasPrevious()) iter.previous();
                     continue;
                 }
                 if(c == '>'){
-                    if(idx < list.size()) idx++;
+                    if(iter.hasNext()) iter.next();
                     continue;
                 }
                 if(c == '-'){
-                    if(idx > 0) list.remove(--idx);
+                    if(iter.hasPrevious()){
+                        iter.previous();
+                        iter.remove();
+                    }
                     continue;
                 }
-                list.add(idx++, c);
+                iter.add(c);
             }
             for(char c : list) bw.write(c);
             bw.write("\n");
