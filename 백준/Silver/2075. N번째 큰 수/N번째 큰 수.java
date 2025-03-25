@@ -8,18 +8,19 @@ public class Main {
         
         int N = Integer.parseInt(br.readLine());
         StringTokenizer st;
+         
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
         
-        int sz = N * N;
-        int[] arr = new int[sz];
-      
         for(int i = 0; i < N; i++){
             st = new StringTokenizer(br.readLine(), " ");
-            for(int j = 0; j < N; j++)
-                arr[i * N + j] = Integer.parseInt(st.nextToken());
+            while(st.hasMoreTokens()){
+                pq.add(Integer.parseInt(st.nextToken()));
+                if(pq.size() <= N) continue;
+                pq.poll();
+            }
         }
-        
-        Arrays.sort(arr);
-        bw.write(Integer.toString(arr[sz - N]));
+      
+        bw.write(Integer.toString(pq.poll()));
             
         br.close();
         bw.flush();
