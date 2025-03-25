@@ -4,7 +4,6 @@ import java.io.*;
 public class Main {
     static BufferedWriter bw;
     static char[][] arr;
-    static boolean[][] visit;
     static int[] dx = {-1,0,1,0};
     static int[] dy = {0,-1,0,1};
     static int R, C, ans = 1;
@@ -19,19 +18,17 @@ public class Main {
          C = Integer.parseInt(st.nextToken());
          
          arr = new char[R][C];
-         visit = new boolean[R][C];
          alphaV = new boolean['Z' - 'A' + 1]; 
          
-         char[] chArr;
+         String str ="";
          
          for(int i = 0; i < R; i++) {
-             chArr = (br.readLine()).toCharArray();       
+             str = br.readLine();    
              for(int j = 0; j < C; j++)
-                 arr[i][j] = chArr[j];
+                 arr[i][j] = str.charAt(j);
          }
          
          alphaV[arr[0][0] - 'A'] = true;
-         visit[0][0] = true;
          bt(0,0,1);
             
          bw.write(Integer.toString(ans));
@@ -46,11 +43,11 @@ public class Main {
         for(int d = 0; d < 4; d++){
             int nx = x + dx[d], ny = y + dy[d];
             if(nx < 0 || ny < 0 || nx >= R || ny >= C) continue;
-            if(alphaV[arr[nx][ny] - 'A'] || visit[nx][ny]) continue;
-            alphaV[arr[nx][ny] - 'A'] = true; visit[nx][ny] = true;
+            if(alphaV[arr[nx][ny] - 'A']) continue;
+            alphaV[arr[nx][ny] - 'A'] = true;
             if(cnt + 1 > ans) ans = cnt + 1; 
             bt(nx, ny, cnt + 1); 
-            alphaV[arr[nx][ny] - 'A'] = false; visit[nx][ny] = false;
+            alphaV[arr[nx][ny] - 'A'] = false; 
         }    
     }
 }
