@@ -1,47 +1,44 @@
 import java.util.*;
 import java.io.*;
 
-
 public class Main {
+    static int N, M;
+    static long[] arr;
+    static long ans;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String str = br.readLine();
-        StringTokenizer st = new StringTokenizer(str, " ");
-       
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
-
-        str = br.readLine();
-        st = new StringTokenizer(str, " ");
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         
-        long[] arr = new long[N];
-        int i = 0;
-        long lo = -1, hi = 1000000001, m; 
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
         
-        while(st.hasMoreTokens()) {
-            arr[i++] = Long.parseLong(st.nextToken());
-            if(arr[i-1] > hi) hi = arr[i-1]; 
-        }
+        arr = new long[N];
+        st = new StringTokenizer(br.readLine(), " ");
+        for(int i = 0; i < N; i++)
+            arr[i] = Long.parseLong(st.nextToken());
         
-        hi++;
-            
-        br.close();
-       
-        while(lo + 1 < hi) {
+        
+        long lo = -1, hi = 1000000001, m;
+        
+        while(lo + 1 < hi){
             m = (lo + hi) / 2;
-            if(!check(m, M, arr)) hi = m;
+            if(!bs(m)) hi = m;
             else lo = m;
         }
         
-        System.out.println(lo);
+        bw.write(Long.toString(lo));
+        br.close();
+        bw.flush();
+        bw.close();
     }
     
-    public static boolean check(long h, int M, long[] arr){
-        long sum = 0;
-        for(long a : arr) {
-            if(a > h) sum += (a - h);
-            if(sum >= M) return true;
-        }
-        return false;
+    public static boolean bs(long x){
+        long tot = 0;
+        
+        for(int i = 0; i < N; i++) 
+            if(arr[i] - x > 0) tot += (arr[i] - x); 
+
+        return tot >= M;
     }
 }
