@@ -9,18 +9,22 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         
         int x = Integer.parseInt(br.readLine());
-        Arrays.fill(memo, Integer.MAX_VALUE);
-        memo[0] = memo[1] = 0;
-        
-        for(int i = 2; i <= x; i++){
-            memo[i] = memo[i - 1] + 1;
-            if(i % 2 == 0) memo[i] = Math.min(memo[i], memo[i / 2] + 1);
-            if(i % 3 == 0) memo[i] = Math.min(memo[i], memo[i / 3] + 1);
-        }
+        bw.write(Integer.toString(makeOne(x)));
 
-        bw.write(Integer.toString(memo[x]));
         br.close();
         bw.flush();
         bw.close();
+    }
+    
+    public static int makeOne(int x) {
+        if(memo[x] != 0) return memo[x];
+        if(x == 1) return memo[x] = 0;
+        if(x % 6 == 0) memo[x] = Math.min(makeOne(x / 2), makeOne(x / 3)) + 1;
+        else {
+           memo[x] = makeOne(x - 1) + 1;
+           if(x % 3 == 0) memo[x] = Math.min(memo[x], makeOne(x / 3) + 1);
+           if(x % 2 == 0) memo[x] = Math.min(memo[x], makeOne(x / 2) + 1);
+        }
+        return memo[x];
     }
 }
