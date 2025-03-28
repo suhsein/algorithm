@@ -1,6 +1,5 @@
 import java.util.*;
 import java.io.*;
-import java.lang.Math;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -12,17 +11,23 @@ public class Main {
         while(st.hasMoreTokens()) arr[i++] = Integer.parseInt(st.nextToken());
        
         int[] lis = new int[N];
-        lis[0] = arr[0];
         int sz = 0;
         
-        for( i = 0; i < N; i++) {
-            int idx = Arrays.binarySearch(lis, 0, sz, arr[i]);
-            if(idx >= 0) continue;
-            idx = Math.abs(idx) - 1;
+        for(i = 0; i < N; i++) {
+            int idx = lowerBound(lis, sz, arr[i]);
             lis[idx] = arr[i];
-            if(sz == idx) sz++;
+            if(idx == sz) sz++;
         }
-       
+    
         System.out.println(sz);
+    }
+    public static int lowerBound(int[] lis, int sz, int cur) {
+        int lo = -1, hi = sz, m;
+        while(lo + 1 < hi){
+            m = (lo + hi) / 2;
+            if(lis[m] < cur) lo = m;
+            else hi = m;
+        }
+        return hi;
     }
 }
