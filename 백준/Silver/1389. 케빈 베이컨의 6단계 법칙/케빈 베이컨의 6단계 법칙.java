@@ -6,10 +6,10 @@ public class Main {
     static BufferedReader br;
     static BufferedWriter bw;
     static int N, M;
-    static List<List<Integer>> friends = new ArrayList<>();
+    static int[][] arr;
+    static int[] kb;
     final static int INF = Integer.MAX_VALUE;
     static int ans = INF, mn = INF;
-    static int[] kb;
     
     public static void main(String[] args) throws IOException {
         br = new BufferedReader(new InputStreamReader(System.in));
@@ -25,7 +25,7 @@ public class Main {
     }
     
     public static void solve() {
-        for(int i = 1; i <= N; i++) dijkstra(i);
+        floydWarshall();
         for(int i = 1; i <= N; i++) {
             if(kb[i] == mn) {
                 ans = i;
@@ -41,39 +41,41 @@ public class Main {
         M = Integer.parseInt(st.nextToken());
 
         int a, b;
+        arr = new int[N + 1][N + 1];
+
+        for(int i = 0; i <= N; i++) {
+            Arrays.fill(arr[i], INF);
+            arr[i][i] = 0;
+        }
         
-        for(int i = 0; i <= N; i++) friends.add(new ArrayList<>());
         for(int i = 0; i < M; i++){
             st = new StringTokenizer(br.readLine(), " ");
             a = Integer.parseInt(st.nextToken());
             b = Integer.parseInt(st.nextToken());
-            friends.get(a).add(b);
-            friends.get(b).add(a);
+            arr[a][b] = arr[b][a] = 1;
         }
 
         kb = new int[N + 1];
     }
 
-    public static void dijkstra(int x){
-        int[] dist = new int[N + 1];
-        Arrays.fill(dist, INF);
-
-        dist[0] = dist[x] = 0;
-
-        Queue<Integer> q = new LinkedList<>();
-        q.add(x);
-
-        while(!q.isEmpty()){
-            int cur = q.poll();
-            
-            for(int nxt : friends.get(cur)){
-                if(dist[nxt] != INF) continue;
-                dist[nxt] = dist[cur] + 1;
-                q.add(nxt);
+    public static void floydWarshall(){
+        for(int k = 1; k <= N; k++){
+            for(int i = 1; i <= N; i++) {
+                for(int j = 1; j <= N; j++){
+                    if(i == j || j == k || i == k) continue;
+                    if(arr[i][k] == INF || arr[k][j] == INF) continue;
+                    int tmp = arr[i][k] + arr[k][j];
+                    if(tmp < arr[i][j]) arr[i][j] = tmp;
+                }
             }
         }
 
-        for(int i = 1; i <= N; i++) kb[x] += dist[i];
-        if(kb[x] < mn) mn = kb[x];
+        for(int i = 1; i <= N; i++) {
+            for(int j = 1; j <= N; j++){
+                if(i == j) continue;
+                kb[i] += arr[i][j];
+            }
+            if(kb[i] < mn) mn = kb[i];
+        }
     }
 }
