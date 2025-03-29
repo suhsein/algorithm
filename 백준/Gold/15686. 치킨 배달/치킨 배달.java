@@ -45,7 +45,7 @@ public class Main {
         Arrays.fill(minDist, Integer.MAX_VALUE);
         
         for(int i = 0; i < C; i++){
-            if(!visit[i]) continue;
+            if(visit[i]) continue;
 
             for(int j = 0; j < H; j++){
                 int curDist = chicken.get(i).getChickenDist(home.get(j));
@@ -58,7 +58,7 @@ public class Main {
     }
     
     public static void bt(int offset, int cnt) {
-        if(cnt == M) {
+        if(cnt == C - M) {
             calc();
             return;
         }
