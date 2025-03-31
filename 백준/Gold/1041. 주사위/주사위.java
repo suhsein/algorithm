@@ -26,7 +26,7 @@ public class Main {
             // 5면합
             ans = tot - mx;
         } else {
-            findMinFaces(0, 0);
+            findMinFaces(0, 0, 0);
             Arrays.sort(mnFaces);
             
             one = mnFaces[0];
@@ -54,18 +54,18 @@ public class Main {
         bw.close();
     }
 
-    public static void findMinFaces(int cnt, long sum) {
+    public static void findMinFaces(int cnt, int idx, long sum) {
         if(cnt == 3) {
             if(sum < mn) {
                 mn = sum;
                 for(int i = 0; i < 3; i++) mnFaces[i] = faces[i];
             }
         }
-        for(int i = 0; i < 6; i++) {
+        for(int i = idx; i < 6; i++) {
             if(visit[i] || visit[5 - i]) continue;
             visit[i] = true;
             faces[cnt] = A[i];
-            findMinFaces(cnt + 1, sum + A[i]);
+            findMinFaces(cnt + 1, idx + 1, sum + A[i]);
             visit[i] = false;
         }
     }
