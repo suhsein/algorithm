@@ -19,7 +19,8 @@ class Main {
             if(P[i] == P[j]) pi[i] = ++j;
         }
 
-        List<Integer> list = new ArrayList<>();
+        int ans = 0;
+        StringBuilder sb = new StringBuilder();
 
         j = 0;
         for(int i = 0; i < n; i ++) {
@@ -27,16 +28,14 @@ class Main {
             if(S[i] == P[j]) {
                 j++;
                 if(j == m) {
-                    list.add(i - m + 2);
+                    ans++;
+                    sb.append(i - m + 2 + " ");
                     j = pi[j - 1];
                 }
             }
         }
 
-        bw.write(Integer.toString(list.size()) + "\n");
-        for(int x : list)
-            bw.write(Integer.toString(x) + " ");
-        
+        bw.write(Integer.toString(ans) + "\n" + sb.toString());
         br.close();
         bw.flush();
         bw.close();
