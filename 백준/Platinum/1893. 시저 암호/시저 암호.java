@@ -3,38 +3,30 @@ import java.lang.*;
 import java.io.*;
 
 class Main {
-    static StringBuilder sb = new StringBuilder();
-    static char[] A;
-    static char[] W;
-    static char[] S;
-    static char[] D;
-    static int alen, wlen, slen;
-    static Map<Character, Integer> m;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int N = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
         
         while(N-- > 0) {
-            A = br.readLine().toCharArray();
-            W = br.readLine().toCharArray();
-            S = br.readLine().toCharArray();
+            char[] A = br.readLine().toCharArray();
+            char[] W = br.readLine().toCharArray();
+            char[] S = br.readLine().toCharArray();
 
-            alen = A.length;
-            wlen = W.length;
-            slen = S.length;
-            m = new HashMap<>();
+            int alen = A.length, wlen = W.length, slen = S.length;
+            Map<Character, Integer> m = new HashMap<>();
             
             for(int i = 0; i < alen; i ++) 
                 m.put(A[i], i);
 
             List<Integer> ans = new ArrayList<>();
             
-            for(int X = 0; X < A.length; X++){
-                D = decode(X);
+            for(int X = 0; X < alen; X++){
+                char[] D = decode(X, sb, S, A, slen, alen, m);
                 sb.setLength(0);
-                boolean able = KMP();
+                boolean able = KMP(W, D, wlen, slen);
                 if(able) ans.add(X);
             }
 
@@ -56,7 +48,7 @@ class Main {
         bw.close();
     }
 
-    public static boolean KMP() {
+    public static boolean KMP(char[] W, char[] D, int wlen, int slen) {
         int[] pi = new int[wlen];
 
         int j = 0, cnt = 0;
@@ -78,7 +70,7 @@ class Main {
         }
         return (cnt == 1);
     }
-    public static char[] decode(int X) {
+    public static char[] decode(int X, StringBuilder sb, char[] S, char[] A, int slen, int alen, Map<Character, Integer> m) {
         if(X == 0) return S;
         for(int i  = 0; i < slen; i++){
             int idx = m.get(S[i]) - X;
