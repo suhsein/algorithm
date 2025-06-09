@@ -16,11 +16,13 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/suhsein/algorithm/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0217-contains-duplicate](https://github.com/suhsein/algorithm/tree/master/0217-contains-duplicate) |
 | [0238-product-of-array-except-self](https://github.com/suhsein/algorithm/tree/master/0238-product-of-array-except-self) |
+| [0268-missing-number](https://github.com/suhsein/algorithm/tree/master/0268-missing-number) |
 ## Hash Table
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/suhsein/algorithm/tree/master/0001-two-sum) |
 | [0217-contains-duplicate](https://github.com/suhsein/algorithm/tree/master/0217-contains-duplicate) |
+| [0268-missing-number](https://github.com/suhsein/algorithm/tree/master/0268-missing-number) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -33,6 +35,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0015-3sum](https://github.com/suhsein/algorithm/tree/master/0015-3sum) |
 | [0217-contains-duplicate](https://github.com/suhsein/algorithm/tree/master/0217-contains-duplicate) |
+| [0268-missing-number](https://github.com/suhsein/algorithm/tree/master/0268-missing-number) |
 ## Prefix Sum
 |  |
 | ------- |
@@ -47,6 +50,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0033-search-in-rotated-sorted-array](https://github.com/suhsein/algorithm/tree/master/0033-search-in-rotated-sorted-array) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/suhsein/algorithm/tree/master/0153-find-minimum-in-rotated-sorted-array) |
+| [0268-missing-number](https://github.com/suhsein/algorithm/tree/master/0268-missing-number) |
 ## Two Pointers
 |  |
 | ------- |
@@ -59,11 +63,13 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Math
 |  |
 | ------- |
+| [0268-missing-number](https://github.com/suhsein/algorithm/tree/master/0268-missing-number) |
 | [0371-sum-of-two-integers](https://github.com/suhsein/algorithm/tree/master/0371-sum-of-two-integers) |
 ## Bit Manipulation
 |  |
 | ------- |
 | [0191-number-of-1-bits](https://github.com/suhsein/algorithm/tree/master/0191-number-of-1-bits) |
+| [0268-missing-number](https://github.com/suhsein/algorithm/tree/master/0268-missing-number) |
 | [0338-counting-bits](https://github.com/suhsein/algorithm/tree/master/0338-counting-bits) |
 | [0371-sum-of-two-integers](https://github.com/suhsein/algorithm/tree/master/0371-sum-of-two-integers) |
 <!---LeetCode Topics End-->
