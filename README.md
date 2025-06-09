@@ -40,6 +40,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0053-maximum-subarray](https://github.com/suhsein/algorithm/tree/master/0053-maximum-subarray) |
+| [0191-number-of-1-bits](https://github.com/suhsein/algorithm/tree/master/0191-number-of-1-bits) |
 ## Binary Search
 |  |
 | ------- |
@@ -61,5 +62,6 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Bit Manipulation
 |  |
 | ------- |
+| [0191-number-of-1-bits](https://github.com/suhsein/algorithm/tree/master/0191-number-of-1-bits) |
 | [0371-sum-of-two-integers](https://github.com/suhsein/algorithm/tree/master/0371-sum-of-two-integers) |
 <!---LeetCode Topics End-->
