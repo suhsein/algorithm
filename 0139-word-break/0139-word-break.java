@@ -7,9 +7,11 @@ class Solution {
         dp[0] = true; // empty string ""
 
         for(int i = 1; i <= n; i++) {
-            for(int j = 0; j < i; j++) {
-                if(dp[j] && set.contains(s.substring(j, i))) 
+            for(int j = i - 1; j >= 0; j--) {
+                if(dp[j] && set.contains(s.substring(j, i))) {
                     dp[i] = true;
+                    break;
+                }
             }
         }
 
