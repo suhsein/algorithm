@@ -3,10 +3,10 @@ class Solution {
         int pivot = findPivot(nums);
 
         int idx = binarySearch(nums, target, 0, pivot - 1);
-        if(idx > 0 && idx < pivot && nums[idx] == target) 
+        if(idx >= 0 && idx < pivot && nums[idx] == target) 
             return idx;
         idx = binarySearch(nums, target, pivot, nums.length - 1);
-        if(idx > 0 && idx < nums.length && nums[idx] == target) 
+        if(idx >= 0 && idx < nums.length && nums[idx] == target) 
             return idx;
 
         return -1;
@@ -38,7 +38,7 @@ class Solution {
             if(nums[mid] < target)
                 lo = mid + 1;
             else
-                hi = mid;
+                hi = mid - 1;
         }
 
         return hi;
