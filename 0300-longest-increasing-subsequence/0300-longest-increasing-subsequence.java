@@ -1,17 +1,37 @@
 class Solution {
     public int lengthOfLIS(int[] nums) {
-        int n = nums.length, ans = 1;
-        int[] dp = new int[n];
+        // 이분탐색을 이용하는 방법
+        // lis 배열을 따로 만든다.
+        // lis 배열로 부터 현재 값이 들어갈 최소 인덱스를 찾는다. (초기 인덱스는 lis의 길이)
+        // 찾은 인덱스에 현재 값을 넣는다
 
-        for(int i = 0; i < n; i++) {
-            dp[i] = 1;
-            for(int j = i - 1; j >= 0; j--) {
-                if(nums[i] <= nums[j]) continue;
-                dp[i] = Math.max(dp[i], dp[j] + 1);
-            }
-            if(dp[i] > ans) ans = dp[i];
+        List<Integer> lis = new ArrayList<>();
+        for(int x : nums) 
+            binarySearch(lis, x);
+
+        return lis.size();
+    }
+
+    public void binarySearch(List<Integer> lis, int target) {
+        int n = lis.size();
+        int lo = 0, hi = n - 1, mid;
+
+        if(n == 0) {
+            lis.add(target);
+            return;
         }
 
-        return ans;
+        while(lo < hi) {
+            mid = (lo + hi) / 2;
+
+            if(lis.get(mid) < target)
+                lo = mid + 1;
+            else
+                hi = mid;
+        }
+
+        if(hi < n && lis.get(hi) >= target)
+            lis.set(hi, target);
+        else lis.add(target);
     }
 }
