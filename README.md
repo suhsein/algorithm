@@ -35,6 +35,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0300-longest-increasing-subsequence](https://github.com/suhsein/algorithm/tree/master/0300-longest-increasing-subsequence) |
 | [0322-coin-change](https://github.com/suhsein/algorithm/tree/master/0322-coin-change) |
 | [0338-counting-bits](https://github.com/suhsein/algorithm/tree/master/0338-counting-bits) |
+| [1250-longest-common-subsequence](https://github.com/suhsein/algorithm/tree/master/1250-longest-common-subsequence) |
 ## Sorting
 |  |
 | ------- |
@@ -89,4 +90,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0322-coin-change](https://github.com/suhsein/algorithm/tree/master/0322-coin-change) |
+## String
+|  |
+| ------- |
+| [1250-longest-common-subsequence](https://github.com/suhsein/algorithm/tree/master/1250-longest-common-subsequence) |
 <!---LeetCode Topics End-->
