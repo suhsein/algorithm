@@ -16,7 +16,7 @@ class Solution {
         int n = lis.size();
         int lo = 0, hi = n - 1, mid;
 
-        if(n == 0) {
+        if(n == 0 || lis.get(n - 1) < target) {
             lis.add(target);
             return;
         }
@@ -30,8 +30,6 @@ class Solution {
                 hi = mid;
         }
 
-        if(hi < n && lis.get(hi) >= target)
-            lis.set(hi, target);
-        else lis.add(target);
+        lis.set(hi, target);
     }
 }
