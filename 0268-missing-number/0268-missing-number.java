@@ -1,20 +1,13 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int max = 0;
-
-        for(int x : nums)
-            if(x > max)
-                max = x;
+        Arrays.sort(nums);
         
-        boolean[] visit = new boolean[max + 1];
-
-        for(int x : nums)
-            visit[x] = true;
-
-        for(int i = 0; i <= max; i++)
-            if(!visit[i])
+        if(nums[0] != 0) return 0;
+        
+        for(int i = 1; i < nums.length; i++) 
+            if(nums[i] != nums[i - 1] + 1)
                 return i;
         
-        return max + 1;
+        return nums.length;
     }
 }
