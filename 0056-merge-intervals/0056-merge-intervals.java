@@ -7,7 +7,6 @@ class Solution {
         });
 
         List<Pair> list = new ArrayList<>();
-        list.add(new Pair(intervals[0][0], intervals[0][1]));
 
         for(int[] cur : intervals) {
             if(list.size() == 0 || 
