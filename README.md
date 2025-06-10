@@ -12,6 +12,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0033-search-in-rotated-sorted-array](https://github.com/suhsein/algorithm/tree/master/0033-search-in-rotated-sorted-array) |
 | [0053-maximum-subarray](https://github.com/suhsein/algorithm/tree/master/0053-maximum-subarray) |
 | [0055-jump-game](https://github.com/suhsein/algorithm/tree/master/0055-jump-game) |
+| [0056-merge-intervals](https://github.com/suhsein/algorithm/tree/master/0056-merge-intervals) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/suhsein/algorithm/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0139-word-break](https://github.com/suhsein/algorithm/tree/master/0139-word-break) |
 | [0152-maximum-product-subarray](https://github.com/suhsein/algorithm/tree/master/0152-maximum-product-subarray) |
@@ -54,6 +55,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0015-3sum](https://github.com/suhsein/algorithm/tree/master/0015-3sum) |
+| [0056-merge-intervals](https://github.com/suhsein/algorithm/tree/master/0056-merge-intervals) |
 | [0217-contains-duplicate](https://github.com/suhsein/algorithm/tree/master/0217-contains-duplicate) |
 | [0268-missing-number](https://github.com/suhsein/algorithm/tree/master/0268-missing-number) |
 ## Prefix Sum
