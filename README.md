@@ -34,6 +34,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0053-maximum-subarray](https://github.com/suhsein/algorithm/tree/master/0053-maximum-subarray) |
+| [0062-unique-paths](https://github.com/suhsein/algorithm/tree/master/0062-unique-paths) |
 | [0070-climbing-stairs](https://github.com/suhsein/algorithm/tree/master/0070-climbing-stairs) |
 | [0091-decode-ways](https://github.com/suhsein/algorithm/tree/master/0091-decode-ways) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/suhsein/algorithm/tree/master/0121-best-time-to-buy-and-sell-stock) |
@@ -81,6 +82,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Math
 |  |
 | ------- |
+| [0062-unique-paths](https://github.com/suhsein/algorithm/tree/master/0062-unique-paths) |
 | [0070-climbing-stairs](https://github.com/suhsein/algorithm/tree/master/0070-climbing-stairs) |
 | [0268-missing-number](https://github.com/suhsein/algorithm/tree/master/0268-missing-number) |
 | [0371-sum-of-two-integers](https://github.com/suhsein/algorithm/tree/master/0371-sum-of-two-integers) |
@@ -111,4 +113,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0139-word-break](https://github.com/suhsein/algorithm/tree/master/0139-word-break) |
+## Combinatorics
+|  |
+| ------- |
+| [0062-unique-paths](https://github.com/suhsein/algorithm/tree/master/0062-unique-paths) |
 <!---LeetCode Topics End-->
