@@ -1,5 +1,4 @@
 class Solution {
-    // testtesttest
     static int[] p;
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
