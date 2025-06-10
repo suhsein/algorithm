@@ -19,17 +19,17 @@ class Node {
 */
 
 class Solution {
-    HashMap<Integer, Node> hm = new HashMap<>();
+    HashMap<Node, Node> hm = new HashMap<>();
 
     public Node cloneGraph(Node node) {
         if(node == null) 
             return null;
         
-        if(hm.containsKey(node.val))
-            return hm.get(node.val);
+        if(hm.containsKey(node))
+            return hm.get(node);
         
         Node cur = new Node(node.val);
-        hm.put(node.val, cur);
+        hm.put(node, cur);
 
         for(Node n : node.neighbors)
             cur.neighbors.add(cloneGraph(n));
